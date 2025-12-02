@@ -1,4 +1,5 @@
 <?php
+// استقبال البيانات المرسلة من check.php
 $username = $_POST['username'];
 $password = $_POST['password'];
 ?>
@@ -10,6 +11,7 @@ $password = $_POST['password'];
 <title>مرحباً</title>
 
 <style>
+    /* خلفية داكنة */
     body {
         background: #0d1117;
         font-family: Tahoma;
@@ -21,6 +23,7 @@ $password = $_POST['password'];
         color: #fff;
     }
 
+    /* صندوق العرض */
     .box {
         background: #161b22;
         padding: 30px;
@@ -40,10 +43,14 @@ $password = $_POST['password'];
 <body>
 
 <div class="box">
+
+    <!-- رسالة ترحيب -->
     <h2>مرحباً يا <?php echo $username; ?> 👋</h2>
 
+    <!-- عرض بيانات المستخدم كاملة -->
     <p><b>اسم المستخدم:</b> <?php echo $username; ?></p>
     <p><b>كلمة المرور:</b> <?php echo $password; ?></p>
+
 </div>
 
 </body>
