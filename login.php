@@ -5,6 +5,7 @@
 <title>تسجيل الدخول</title>
 
 <style>
+    /* تنسيق الخلفية العامة */
     body {
         background: #0d1117;
         font-family: Tahoma;
@@ -16,6 +17,7 @@
         color: #fff;
     }
 
+    /* صندوق تسجيل الدخول */
     .box {
         background: #161b22;
         padding: 25px;
@@ -25,6 +27,7 @@
         text-align: center;
     }
 
+    /* تنسيق الحقول */
     input {
         width: 90%;
         padding: 10px;
@@ -40,6 +43,7 @@
         outline: none;
     }
 
+    /* زر الدخول */
     button {
         width: 95%;
         padding: 10px;
@@ -63,6 +67,7 @@
 <div class="box">
     <h2>تسجيل الدخول</h2>
 
+    <!-- نموذج إرسال البيانات إلى check.php -->
     <form action="check.php" method="POST">
         <input type="text" name="username" placeholder="اسم المستخدم" required><br>
         <input type="password" name="password" placeholder="كلمة المرور" required><br>
