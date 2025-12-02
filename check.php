@@ -1,5 +1,6 @@
 <?php
 
+// مصفوفة المستخدمين وكلمات المرور
 $users = array(
     "ahmed" => "123",
     "aml" => "435",
@@ -9,21 +10,29 @@ $users = array(
     "somaiah" => "2340"
 );
 
+// استقبال البيانات المرسلة من نموذج تسجيل الدخول
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+// التحقق من صحة اسم المستخدم وكلمة المرور
 if (isset($users[$username]) && $users[$username] == $password) {
 
+    // إذا كانت البيانات صحيحة → إرسالها لصفحة welcome.php باستخدام POST
     echo "
     <form id='f' action='welcome.php' method='POST'>
         <input type='hidden' name='username' value='$username'>
         <input type='hidden' name='password' value='$password'>
     </form>
-    <script>document.getElementById('f').submit();</script>
+
+    <script>
+        // إرسال النموذج تلقائياً
+        document.getElementById('f').submit();
+    </script>
     ";
 
 } else {
 
+    // في حالة البيانات غير صحيحة → إظهار رسالة خطأ
     echo "
     <div style='
         font-family: Tahoma;
@@ -38,6 +47,8 @@ if (isset($users[$username]) && $users[$username] == $password) {
     '>
         <h2>❌ الدخول غير مصرح به</h2>
         <p style='color:white;'>اسم المستخدم أو كلمة المرور غير صحيحة</p>
+
+        <!-- زر الرجوع إلى صفحة تسجيل الدخول -->
         <a href=\"login.php\" style=\"
             display:inline-block;
             margin-top:15px;
